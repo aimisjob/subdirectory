@@ -1,7 +1,7 @@
 pipeline{
  agent any
  options{
-   checkoutToSubdirectory('somesubdir')
+   checkoutToSubdirectory('swethagulabi')
    }
   stages{
    stage('build'){
