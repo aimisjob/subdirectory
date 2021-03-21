@@ -1,21 +1,15 @@
 pipeline {
     agent none
+	options {
+	  checkoutToSubdirectory('gulabi')
+	}
     stages {
-        stage('Checkout') {
-            agent any
-            steps {                
-                checkout([$class: 'GitSCM', 
-				branches: [[name: "origin/master"]], 
-				userRemoteConfigs: [[
-                url: 'https://github.com/aimisjob/subdirectory.git']],
-				extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'checkout-directory']]
-				])
-            }
-        }
+         
+     
         stage('dockerfile'){            
             agent {
                 dockerfile {
-                    customWorkspace '/var/lib/jenkins/workspace/pl_docfile_cws/checkout-directory'
+                    customWorkspace '/var/lib/jenkins/workspace/pl_docfile_cws/gulabi'
                 } 
             }            
             steps{
