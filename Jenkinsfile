@@ -7,7 +7,7 @@ pipeline {
                 checkout([$class: 'GitSCM', 
 				branches: [[name: "origin/master"]], 
 				userRemoteConfigs: [[
-                url: 'https://github.com/aimisjob/subdirectory.git']],
+                url: 'https://github.com/pipelineascodecourse/pipeline-agent-dockerfile.git']],
 				extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'checkout-directory']]
 				])
             }
@@ -24,3 +24,16 @@ pipeline {
         }
     }
 }
+          
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
