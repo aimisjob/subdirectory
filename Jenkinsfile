@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
 	options {
 	  checkoutToSubdirectory('gulabi')
 	}
@@ -7,9 +7,11 @@ pipeline {
          
      
         stage('dockerfile'){            
-           
+		agent {
+			dockerfile {
+				customWorkspace '/var/lib/jenkins/workspace/pl_docfile_cws/gulabi'
             steps{
-                sh 'touch a'
+                sh 'cat /etc/lsb-release'
             }
         }
     }
